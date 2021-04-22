@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="852.0" style="-fx-background-color: C8553D;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EECS3311.Project.PayController">
+   <children>
+      <Label layoutX="370.0" layoutY="110.0" prefHeight="49.0" prefWidth="133.0" text="Payement" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="27.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <Button fx:id="back3" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#back3" prefHeight="34.0" prefWidth="107.0" style="-fx-background-color: #588B8B;" text="Back" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Yu Gothic Medium" size="19.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextField fx:id="spaceNum" layoutX="454.0" layoutY="225.0" prefHeight="33.0" prefWidth="159.0" promptText="Parking Space Number">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="plateNum" layoutX="454.0" layoutY="281.0" prefHeight="33.0" prefWidth="159.0" promptText="License Plate Number">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </PasswordField>
+      <Label layoutX="240.0" layoutY="211.0" prefHeight="62.0" prefWidth="214.0" text="Enter Parking Space Number: " textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <Label layoutX="247.0" layoutY="267.0" prefHeight="62.0" prefWidth="199.0" text="Enter License Plate Number:" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <Label layoutX="295.0" layoutY="336.0" prefHeight="36.0" prefWidth="159.0" text="Select Booking Time:" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <PasswordField fx:id="bookingTime" layoutX="454.0" layoutY="337.0" prefHeight="33.0" prefWidth="159.0" promptText="Booking Time">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </PasswordField>
+      <Button fx:id="done" layoutX="368.0" layoutY="410.0" mnemonicParsing="false" onAction="#done" prefHeight="55.0" prefWidth="117.0" style="-fx-background-color: #588B8B;" text="Done" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Yu Gothic Medium" size="19.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="nullWarn" layoutX="332.0" layoutY="499.0" prefHeight="62.0" prefWidth="188.0" style="-fx-background-color: F28F3B; -fx-background-radius: 10px;" text="Some Fields are Empty" textAlignment="CENTER" textFill="WHITE" visible="false" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <Label fx:id="bookedWarn" layoutX="342.0" layoutY="509.0" prefHeight="62.0" prefWidth="188.0" style="-fx-background-color: F28F3B; -fx-background-radius: 10px;" text="Parking Space is Booked" textAlignment="CENTER" textFill="WHITE" visible="false" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+   </children>
+</AnchorPane>

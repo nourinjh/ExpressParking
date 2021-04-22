@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="852.0" style="-fx-background-color: C8553D;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EECS3311.Project.OfficerController">
+   <children>
+      <Button fx:id="officerLogin" layoutX="582.0" layoutY="354.0" mnemonicParsing="false" onAction="#loginButton" prefHeight="46.0" prefWidth="98.0" style="-fx-background-color: #588B8B;" text="Login" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Yu Gothic Medium" size="19.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="530.0" layoutY="146.0" prefHeight="62.0" prefWidth="203.0" text="Officer Login" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="33.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <TextField fx:id="oEmail" layoutX="570.0" layoutY="236.0" prefHeight="33.0" prefWidth="159.0" promptText="Email">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="oPassword" layoutX="570.0" layoutY="292.0" prefHeight="33.0" prefWidth="159.0" promptText="Password">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </PasswordField>
+      <Label layoutX="515.0" layoutY="239.0" prefHeight="28.0" prefWidth="55.0" text="Email:" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="19.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <Label layoutX="480.0" layoutY="295.0" prefHeight="28.0" prefWidth="90.0" text="Password:" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="19.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <Label fx:id="oWarning" layoutX="517.0" layoutY="453.0" prefHeight="62.0" prefWidth="230.0" style="-fx-background-color: F28F3B; -fx-background-radius: 10px;" text="Email and/or password are incorrect." textAlignment="CENTER" textFill="WHITE" visible="false" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <Button fx:id="officerSignup" layoutX="185.0" layoutY="371.0" mnemonicParsing="false" onAction="#signupButton" prefHeight="46.0" prefWidth="98.0" style="-fx-background-color: #588B8B;" text="Sign Up" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Yu Gothic Medium" size="19.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="119.0" layoutY="140.0" prefHeight="62.0" prefWidth="230.0" text="Officer Sign Up" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="33.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <TextField fx:id="sEmail" layoutX="200.0" layoutY="311.0" prefHeight="33.0" prefWidth="159.0" promptText="Email">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <Label layoutX="145.0" layoutY="314.0" prefHeight="28.0" prefWidth="55.0" text="Email:" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="19.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <Label layoutX="102.0" layoutY="216.0" prefHeight="28.0" prefWidth="98.0" text="First Name:" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="19.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <Label layoutX="102.0" layoutY="266.0" prefHeight="28.0" prefWidth="98.0" text="Last Name:" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="19.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <TextField fx:id="sLast" layoutX="200.0" layoutY="263.0" prefHeight="33.0" prefWidth="159.0" promptText="Last Name">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="sFirst" layoutX="200.0" layoutY="214.0" prefHeight="33.0" prefWidth="159.0" promptText="First Name">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <Line endX="100.0" endY="61.0" layoutX="325.0" layoutY="366.0" startX="100.0" startY="-236.0" stroke="#ffd5c2" strokeWidth="2.0" />
+      <Label fx:id="oWarning2" contentDisplay="CENTER" layoutX="155.0" layoutY="453.0" prefHeight="62.0" prefWidth="159.0" style="-fx-background-color: F28F3B; -fx-background-radius: 10px;" text="Email already exists." textAlignment="CENTER" textFill="WHITE" visible="false" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+   </children>
+</AnchorPane>

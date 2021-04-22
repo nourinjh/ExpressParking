@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="852.0" style="-fx-background-color: C8553D;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EECS3311.Project.UserLoginController">
+   <children>
+      <Button fx:id="login" layoutX="404.0" layoutY="372.0" mnemonicParsing="false" onAction="#loginButton" prefHeight="46.0" prefWidth="98.0" style="-fx-background-color: #588B8B;" text="Login" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Yu Gothic Medium" size="19.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="374.0" layoutY="164.0" prefHeight="62.0" prefWidth="159.0" text="User Login" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="33.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <TextField fx:id="emailx" layoutX="392.0" layoutY="254.0" prefHeight="33.0" prefWidth="159.0" promptText="Email">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="passwordx" layoutX="392.0" layoutY="310.0" prefHeight="33.0" prefWidth="159.0" promptText="Password">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </PasswordField>
+      <Label layoutX="337.0" layoutY="257.0" prefHeight="28.0" prefWidth="55.0" text="Email:" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="19.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <Label layoutX="302.0" layoutY="313.0" prefHeight="28.0" prefWidth="90.0" text="Password:" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="19.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <Label fx:id="warning" layoutX="338.0" layoutY="452.0" prefHeight="62.0" prefWidth="230.0" style="-fx-background-color: F28F3B; -fx-background-radius: 10px;" text="Email and/or password are incorrect." textAlignment="CENTER" textFill="WHITE" visible="false" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#back" prefHeight="33.0" prefWidth="90.0" style="-fx-background-color: #588B8B;" text="Back" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Yu Gothic Medium" size="19.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>
