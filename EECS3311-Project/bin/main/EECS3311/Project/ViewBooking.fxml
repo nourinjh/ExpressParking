@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="852.0" style="-fx-background-color: C8553D;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EECS3311.Project.BookingController">
+   <children>
+      <Label layoutX="364.0" layoutY="100.0" prefHeight="62.0" prefWidth="180.0" text="View Bookings" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="27.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <Button fx:id="back3" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#back3" prefHeight="34.0" prefWidth="107.0" style="-fx-background-color: #588B8B;" text="Back" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Yu Gothic Medium" size="19.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="nullWarn" layoutX="332.0" layoutY="499.0" prefHeight="62.0" prefWidth="188.0" style="-fx-background-color: F28F3B; -fx-background-radius: 10px;" text="Some Fields are Empty" textAlignment="CENTER" textFill="WHITE" visible="false" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <Label fx:id="bookedWarn" layoutX="342.0" layoutY="509.0" prefHeight="62.0" prefWidth="188.0" style="-fx-background-color: F28F3B; -fx-background-radius: 10px;" text="Parking Space is Booked" textAlignment="CENTER" textFill="WHITE" visible="false" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <TableView layoutX="283.0" layoutY="208.0" prefHeight="233.0" prefWidth="307.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="Time" />
+            <TableColumn prefWidth="75.0" text="Column X" />
+            <TableColumn prefWidth="75.0" text="Column X" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

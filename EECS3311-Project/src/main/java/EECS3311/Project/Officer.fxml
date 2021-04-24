@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="852.0" style="-fx-background-color: C8553D;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EECS3311.Project.OfficerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="852.0" style="-fx-background-color: C8553D;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EECS3311.Project.OfficerTest">
    <children>
       <Button fx:id="officerLogin" layoutX="582.0" layoutY="354.0" mnemonicParsing="false" onAction="#loginButton" prefHeight="46.0" prefWidth="98.0" style="-fx-background-color: #588B8B;" text="Login" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>

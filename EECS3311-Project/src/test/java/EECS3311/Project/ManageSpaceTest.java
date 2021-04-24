@@ -16,7 +16,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.layout.VBox;
 
 
-public class ManageSpaceController {
+public class ManageSpaceTest {
 
 	@FXML
     private Label nullWarn;

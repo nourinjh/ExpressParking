@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="852.0" style="-fx-background-color: C8553D;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EECS3311.Project.ManageSpaceController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="852.0" style="-fx-background-color: C8553D;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EECS3311.Project.ManageSpaceTest">
    <children>
-      <Label layoutX="328.0" layoutY="105.0" prefHeight="62.0" prefWidth="216.0" text="Manage Bookings" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Label layoutX="328.0" layoutY="50.0" prefHeight="62.0" prefWidth="216.0" text="Manage Bookings" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font size="27.0" />
          </font>
@@ -19,7 +19,7 @@
             <DropShadow offsetX="2.0" offsetY="2.0" />
          </effect>
       </Label>
-      <Button fx:id="back3" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#back3" prefHeight="34.0" prefWidth="107.0" style="-fx-background-color: #588B8B;" text="Back" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#back" prefHeight="34.0" prefWidth="107.0" style="-fx-background-color: #588B8B;" text="Back" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Yu Gothic Medium" size="19.0" />
          </font>
@@ -30,7 +30,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="done" layoutX="368.0" layoutY="410.0" mnemonicParsing="false" onAction="#done" prefHeight="55.0" prefWidth="117.0" style="-fx-background-color: #588B8B;" text="Done" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Button layoutX="437.0" layoutY="485.0" mnemonicParsing="false" onAction="#cancel" prefHeight="55.0" prefWidth="165.0" style="-fx-background-color: #588B8B;" text="Cancel Request" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Yu Gothic Medium" size="19.0" />
          </font>
@@ -57,13 +57,46 @@
             <DropShadow offsetX="2.0" offsetY="2.0" />
          </effect>
       </Label>
-      <TableView layoutX="275.0" layoutY="182.0" prefHeight="200.0" prefWidth="304.0">
+      <TableView fx:id="table" layoutX="260.0" layoutY="112.0" prefHeight="286.0" prefWidth="354.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="C1" />
-            <TableColumn prefWidth="75.0" text="C2" />
-            <TableColumn prefWidth="75.0" text="Column X" />
-            <TableColumn prefWidth="75.0" text="Column X" />
+            <TableColumn fx:id="park" prefWidth="91.0" text="Parking Space" />
+            <TableColumn fx:id="book" prefWidth="59.0" text="Booking" />
+            <TableColumn fx:id="bookTime" prefWidth="88.0" text="Booking Time" />
+            <TableColumn fx:id="user" prefWidth="115.0" text="User" />
          </columns>
       </TableView>
+      <Button layoutX="250.0" layoutY="485.0" mnemonicParsing="false" onAction="#approve" prefHeight="55.0" prefWidth="177.0" style="-fx-background-color: #588B8B;" text="Approve Request" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Yu Gothic Medium" size="19.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="437.0" layoutY="419.0" mnemonicParsing="false" onAction="#removeSpace" prefHeight="55.0" prefWidth="165.0" style="-fx-background-color: #588B8B;" text="Remove Space" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Yu Gothic Medium" size="19.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="276.0" layoutY="419.0" mnemonicParsing="false" onAction="#addSpace" prefHeight="55.0" prefWidth="126.0" style="-fx-background-color: #588B8B;" text="Add Space" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Yu Gothic Medium" size="19.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>

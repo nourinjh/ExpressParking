@@ -21,34 +21,34 @@ import javafx.stage.Stage;
 public class BookSpaceController {
 
 	@FXML
-	private Button back3;
+	public Button back3;
 
 	@FXML
-	private TextField spaceNum;
+	public TextField spaceNum;
 
 	@FXML
-	private TextField plateNum;
+	public TextField plateNum;
 
 	@FXML
-	private TextField bookingTime;
+	public TextField bookingTime;
 
 	@FXML
-	private Button done;
+	public Button done;
 
 	@FXML
-	private Label bookedWarn;
+	public Label bookedWarn;
 
 	@FXML
-	private Label nullWarn;
+	public Label nullWarn;
 	
 	@FXML
-	private Label tooMany;
+	public Label tooMany;
 	
 	@FXML
-	private Label booked;
+	public Label booked;
 
 	@FXML
-	void back3(ActionEvent event) throws IOException {
+	public void back3(ActionEvent event) throws IOException {
 		Parent parent = FXMLLoader.load(getClass().getResource("LandingPage.fxml"));
 		Scene scene = new Scene(parent);
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -58,7 +58,7 @@ public class BookSpaceController {
 	}
 
 	@FXML
-	void done(ActionEvent event) throws IOException {
+	public void done(ActionEvent event) throws IOException {
 		boolean spaceFlag = false;
 		String line = "";
 		String delimiter = ",";
