@@ -65,7 +65,7 @@
             <DropShadow offsetX="2.0" offsetY="2.0" />
          </effect>
       </Label>
-      <Button fx:id="officerSignup" layoutX="185.0" layoutY="371.0" mnemonicParsing="false" onAction="#signupButton" prefHeight="46.0" prefWidth="98.0" style="-fx-background-color: #588B8B;" text="Sign Up" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Button fx:id="officerSignup" layoutX="136.0" layoutY="371.0" mnemonicParsing="false" onAction="#signupButton" prefHeight="46.0" prefWidth="98.0" style="-fx-background-color: #588B8B;" text="Add" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Yu Gothic Medium" size="19.0" />
          </font>
@@ -124,7 +124,42 @@
          </font>
       </TextField>
       <Line endX="100.0" endY="61.0" layoutX="325.0" layoutY="366.0" startX="100.0" startY="-236.0" stroke="#ffd5c2" strokeWidth="2.0" />
+      <Button fx:id="remove" layoutX="251.0" layoutY="371.0" mnemonicParsing="false" onAction="#remove" prefHeight="46.0" prefWidth="98.0" style="-fx-background-color: #588B8B;" text="Remove" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Yu Gothic Medium" size="19.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Button>
       <Label fx:id="oWarning2" contentDisplay="CENTER" layoutX="155.0" layoutY="453.0" prefHeight="62.0" prefWidth="159.0" style="-fx-background-color: F28F3B; -fx-background-radius: 10px;" text="Email already exists." textAlignment="CENTER" textFill="WHITE" visible="false" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <Label fx:id="giveID" contentDisplay="CENTER" layoutX="165.0" layoutY="463.0" prefHeight="62.0" prefWidth="159.0" style="-fx-background-color: F28F3B; -fx-background-radius: 10px;" textAlignment="CENTER" textFill="WHITE" visible="false" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <Label fx:id="nullWarn" contentDisplay="CENTER" layoutX="165.0" layoutY="463.0" prefHeight="62.0" prefWidth="159.0" style="-fx-background-color: F28F3B; -fx-background-radius: 10px;" text="Some fields are empty" textAlignment="CENTER" textFill="WHITE" visible="false" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <Label fx:id="removed" contentDisplay="CENTER" layoutX="175.0" layoutY="473.0" prefHeight="62.0" prefWidth="138.0" style="-fx-background-color: F28F3B; -fx-background-radius: 10px;" text="Officer Removed" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font size="18.0" />
          </font>

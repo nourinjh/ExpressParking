@@ -3,7 +3,6 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -35,11 +34,6 @@
             <Font size="13.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="plateNum" layoutX="454.0" layoutY="281.0" prefHeight="33.0" prefWidth="159.0" promptText="License Plate Number">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </PasswordField>
       <Label layoutX="240.0" layoutY="211.0" prefHeight="62.0" prefWidth="214.0" text="Enter Parking Space Number: " textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font size="16.0" />
@@ -64,11 +58,6 @@
             <DropShadow offsetX="2.0" offsetY="2.0" />
          </effect>
       </Label>
-      <PasswordField fx:id="bookingTime" layoutX="454.0" layoutY="337.0" prefHeight="33.0" prefWidth="159.0" promptText="Booking Time">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </PasswordField>
       <Button fx:id="done" layoutX="368.0" layoutY="410.0" mnemonicParsing="false" onAction="#done" prefHeight="55.0" prefWidth="117.0" style="-fx-background-color: #588B8B;" text="Done" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Yu Gothic Medium" size="19.0" />
@@ -88,7 +77,33 @@
             <DropShadow offsetX="2.0" offsetY="2.0" />
          </effect>
       </Label>
-      <Label fx:id="bookedWarn" layoutX="342.0" layoutY="509.0" prefHeight="62.0" prefWidth="188.0" style="-fx-background-color: F28F3B; -fx-background-radius: 10px;" text="Parking Space is Booked" textAlignment="CENTER" textFill="WHITE" visible="false" wrapText="true">
+      <Label fx:id="bookedWarn" layoutX="342.0" layoutY="509.0" prefHeight="62.0" prefWidth="188.0" style="-fx-background-color: F28F3B; -fx-background-radius: 10px;" text="Parking Space is Already Occupied" textAlignment="CENTER" textFill="WHITE" visible="false" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <TextField fx:id="plateNum" layoutX="454.0" layoutY="282.0" prefHeight="33.0" prefWidth="159.0" promptText="Parking Space Number">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="bookingTime" layoutX="454.0" layoutY="338.0" prefHeight="33.0" prefWidth="159.0" promptText="Parking Space Number">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <Label fx:id="tooMany" layoutX="333.0" layoutY="492.0" prefHeight="62.0" prefWidth="188.0" style="-fx-background-color: F28F3B; -fx-background-radius: 10px;" text="You have booked more than 3 spaces!" textAlignment="CENTER" textFill="WHITE" visible="false" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </Label>
+      <Label fx:id="booked" layoutX="333.0" layoutY="499.0" prefHeight="62.0" prefWidth="188.0" style="-fx-background-color: F28F3B; -fx-background-radius: 10px;" textAlignment="CENTER" textFill="WHITE" visible="false" wrapText="true">
          <font>
             <Font size="18.0" />
          </font>

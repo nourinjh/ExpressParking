@@ -6,8 +6,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Run extends Application {
 
+
+public class Run extends Application {
+	
+	public static String email;
+	
+	public static String fName;
+	
+	public static String lName;
+	
 	public static Stage primaryStage;
 
 	@Override
@@ -15,8 +23,11 @@ public class Run extends Application {
 		primaryStage = stage;
 
 		Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
+		primaryStage.setTitle("Express Parking");
 		Scene scene = new Scene(root);
+		stage.sizeToScene();
 		stage.setScene(scene);
+		stage.setResizable(true);
 		stage.show();
 	}
 

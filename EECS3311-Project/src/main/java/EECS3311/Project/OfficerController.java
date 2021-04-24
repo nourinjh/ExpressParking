@@ -25,6 +25,9 @@ public class OfficerController {
 	private Button officerLogin;
 
 	@FXML
+	private Button remove;
+
+	@FXML
 	private TextField oEmail;
 
 	@FXML
@@ -37,6 +40,15 @@ public class OfficerController {
 	private Label oWarning2;
 
 	@FXML
+	private Label nullWarn;
+
+	@FXML
+	private Label giveID;
+
+	@FXML
+	private Label removed;
+
+	@FXML
 	private Button officerSignup;
 
 	@FXML
@@ -47,6 +59,8 @@ public class OfficerController {
 
 	@FXML
 	private TextField sFirst;
+
+	// officers login
 
 	@FXML
 	void loginButton(ActionEvent event) throws IOException {
@@ -62,6 +76,7 @@ public class OfficerController {
 		try {
 			int i = 0;
 			while ((line = read.readLine()) != null) {
+				// putting each column into an array
 				user = line.split(delimiter);
 				emails[i] = user[2];
 				id[i] = user[3];
@@ -106,28 +121,29 @@ public class OfficerController {
 		String line = "";
 		String delimiter = ",";
 		boolean flag = false;
-		BufferedWriter signUps = new BufferedWriter(new FileWriter("officers.csv", true));
-		signUps.close();
+		BufferedWriter officerRead = new BufferedWriter(new FileWriter("officers.csv", true));
+		officerRead.close();
 		String[] emails = new String[1000];
 		String[] user = new String[1000];
 
 		if (sLast.getText().equals("") || sFirst.getText().equals("") || sEmail.getText().equals("")) {
 			System.out.println("null fields");
-			oWarning2.setVisible(true);
+			nullWarn.setVisible(true);
 
 		} else {
 			// read file
-			BufferedReader read = new BufferedReader(new FileReader("signups.csv"));
+			BufferedReader read = new BufferedReader(new FileReader("officers.csv"));
 			try {
 				int i = 0;
 				while ((line = read.readLine()) != null) {
+					// putting each column into an array
 					user = line.split(delimiter);
 					emails[i] = user[2];
 					i++;
 				}
 				int j = 0;
 				while (emails[j] != null) {
-					if (oEmail.getText().equals(emails[j])) {
+					if (sEmail.getText().equals(emails[j])) {
 						flag = true;
 					}
 					j++;
@@ -139,36 +155,126 @@ public class OfficerController {
 				e3.printStackTrace();
 			}
 
+			int unique = gen();
 			// write to file
 			try {
-				signUps = new BufferedWriter(new FileWriter("officers.csv", true));
-				signUps.write(sFirst.getText() + "," + sLast.getText() + "," + sEmail.getText() + "," + gen());
-				signUps.newLine();
-				signUps.flush();
+				officerRead = new BufferedWriter(new FileWriter("officers.csv", true));
+				officerRead.write(sFirst.getText() + "," + sLast.getText() + "," + sEmail.getText() + "," + unique);
+				officerRead.newLine();
+				officerRead.flush();
 				System.out.println("Successfully wrote to the file.");
 			} catch (IOException e) {
 				System.out.println("An error occurred.");
 			} finally {
-				if (signUps != null)
+				if (officerRead != null)
 					try {
-						signUps.close();
+						officerRead.close();
 					} catch (IOException e2) {
 
 					}
 			}
-
-			if (flag == true)
+			// error checking
+			if (flag == true) {
 				System.out.println("email already exists");
-			else {
-				System.out.println("went to landing page");
-				Parent parent = FXMLLoader.load(getClass().getResource("OfficerPage.fxml"));
-				Scene scene = new Scene(parent);
-				Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-				stage.hide();
-				stage.setScene(scene);
-				stage.show();
+				giveID.setVisible(false);
+				oWarning2.setVisible(true);
+				nullWarn.setVisible(false);
+				removed.setVisible(false);
+			} else {
+				System.out.println("Officer Signed up");
+				giveID.setText("Officer Signed Up! Unique ID is: " + unique);
+				giveID.setVisible(true);
+				oWarning2.setVisible(false);
+				nullWarn.setVisible(false);
+				removed.setVisible(false);
 			}
 		}
+	}
+
+	@FXML
+	void remove(ActionEvent event) throws IOException {
+
+		String line = "";
+		String delimiter = ",";
+		String[] off = null;
+		String[] firstName = new String[1000];
+		int[] uniqueID = new int[1000];
+		String[] lastName = new String[1000];
+		String[] email = new String[1000];
+		int index = 0;
+		boolean check = false;
+
+		// read file
+		BufferedReader read = new BufferedReader(new FileReader("officers.csv"));
+		try {
+			int i = 0;
+			while ((line = read.readLine()) != null) {
+				off = line.split(delimiter);
+				firstName[i] = off[0];
+				lastName[i] = off[1];
+				email[i] = off[2];
+				uniqueID[i] = Integer.parseInt(off[3]);
+				i++;
+			}
+
+			// looking for the email in the file and storing the index
+			for (int j = 0; email[j] != null; j++) {
+				if (sEmail.getText().equals(email[j])) {
+					index = j;
+				}
+			}
+
+			// if the inputed email exists, set all values in that row to null
+			if (sEmail.getText().equals(email[index])) {
+				check = true;
+				firstName[index] = "";
+				email[index] = "";
+				lastName[index] = "";
+				uniqueID[index] = 0;
+			}
+
+			read.close();
+
+			System.out.println("file read");
+
+		} catch (IOException e3) {
+			e3.printStackTrace();
+		}
+
+		if (check == true) {
+			// write to file
+			BufferedWriter cancelled = null;
+			try {
+				cancelled = new BufferedWriter(new FileWriter("officers.csv"));
+
+				for (int i = 0; email[i] != null; i++) {
+					// if i is equal to index, then skip, else copy values from arrays to overwrite
+					// file
+					if (i == index)
+						continue;
+					else {
+						cancelled.write(firstName[i] + "," + email[i] + "," + lastName[i] + "," + uniqueID[i]);
+						cancelled.newLine();
+					}
+				}
+				cancelled.flush();
+				System.out.println("Successfully wrote to the file.");
+			} catch (IOException e) {
+				System.out.println("An error occurred.");
+			} finally {
+				if (cancelled != null)
+					try {
+						cancelled.close();
+					} catch (IOException e2) {
+
+					}
+			}
+			removed.setVisible(true);
+			giveID.setVisible(false);
+			oWarning2.setVisible(false);
+			nullWarn.setVisible(false);
+		}
+
 	}
 
 }

@@ -49,9 +49,12 @@ public class UserLoginController {
 		String[] emails = new String[1000];
 		String[] user = new String[1000];
 		String[] passwords = new String[1000];
+		String[] first = new String[1000];
+		String[] last = new String[1000];
 		String line = "";
 		String delimiter = ",";
 		boolean flag = false;
+		int index = 0;
 
 		// read file
 		BufferedReader read = new BufferedReader(new FileReader("signups.csv"));
@@ -59,6 +62,8 @@ public class UserLoginController {
 			int i = 0;
 			while ((line = read.readLine()) != null) {
 				user = line.split(delimiter);
+				first[i] = user[0];
+				last[i] = user[1];
 				emails[i] = user[2];
 				passwords[i] = user[3];
 				i++;
@@ -66,6 +71,7 @@ public class UserLoginController {
 			int j = 0;
 			while (emails[j] != null) {
 				if (emailx.getText().equals(emails[j])) {
+					index = j;
 					flag = true;
 				}
 				j++;
@@ -81,6 +87,9 @@ public class UserLoginController {
 			System.out.println("Email and/or password are incorrect or don't exist");
 			warning.setVisible(true);
 		} else {
+			Run.email = emailx.getText();
+			Run.fName = first[index];
+			Run.lName = last[index];
 			Parent parent = FXMLLoader.load(getClass().getResource("LandingPage.fxml"));
 			Scene scene = new Scene(parent);
 			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

@@ -111,6 +111,9 @@ public class UserSignupController {
 			if (flag == true)
 				System.out.println("email already exists");
 			else {
+				Run.email = email.getText();
+				Run.fName = firstName.getText();
+				Run.lName = lastName.getText();
 				System.out.println("went to landing page");
 				Parent parent = FXMLLoader.load(getClass().getResource("LandingPage.fxml"));
 				Scene scene = new Scene(parent);
