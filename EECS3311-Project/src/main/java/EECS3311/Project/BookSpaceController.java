@@ -46,7 +46,11 @@ public class BookSpaceController {
 	
 	@FXML
 	public Label booked;
-
+	
+	public int count = 0;
+	
+	public int bookID = gen();
+	
 	@FXML
 	public void back3(ActionEvent event) throws IOException {
 		Parent parent = FXMLLoader.load(getClass().getResource("LandingPage.fxml"));
@@ -58,12 +62,12 @@ public class BookSpaceController {
 	}
 
 	@FXML
-	public void done(ActionEvent event) throws IOException {
+	public void done() throws Exception {
 		boolean spaceFlag = false;
 		String line = "";
 		String delimiter = ",";
 		String[] park = null;
-		int count = 0;
+		
 
 		// read file
 		BufferedReader read = new BufferedReader(new FileReader("parkingSpaces.csv"));
@@ -92,27 +96,27 @@ public class BookSpaceController {
 		}
 
 		if (spaceNum.getText().equals("") || plateNum.getText().equals("") || bookingTime.getText().equals("")) {
-			System.out.println("null fields");
 			nullWarn.setVisible(true);
 			bookedWarn.setVisible(false);
 			tooMany.setVisible(false);
 			booked.setVisible(false);
+			throw new Exception("null fields");
 		} else if (spaceFlag == true) {
-			System.out.println("parking space is already reserved");
 			bookedWarn.setVisible(true);
 			nullWarn.setVisible(false);
 			tooMany.setVisible(false);
 			booked.setVisible(false);
+			throw new Exception("parking space is already reserved");
 		} else if (count >= 3) {
-			System.out.println("too many bookings");
 			tooMany.setVisible(true);
 			bookedWarn.setVisible(false);
 			nullWarn.setVisible(false);
 			booked.setVisible(false);
+			throw new Exception("too many bookings");
 		} else {
 			// write to file
 			BufferedWriter parkingSpaces = null;
-			int bookID = gen();
+			
 			try {				
 				parkingSpaces = new BufferedWriter(new FileWriter("parkingSpaces.csv", true));
 				parkingSpaces.write(spaceNum.getText() + "," + Run.email + "," + bookingTime.getText() + "," + bookID);

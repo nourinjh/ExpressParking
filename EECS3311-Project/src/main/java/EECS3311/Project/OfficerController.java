@@ -118,9 +118,11 @@ public class OfficerController {
 
 	@FXML
 	void signupButton(ActionEvent event) throws IOException {
+		int unique = gen();
 		String line = "";
 		String delimiter = ",";
 		boolean flag = false;
+		String[] id = new String[1000];
 		BufferedWriter officerRead = new BufferedWriter(new FileWriter("officers.csv", true));
 		officerRead.close();
 		String[] emails = new String[1000];
@@ -139,9 +141,15 @@ public class OfficerController {
 					// putting each column into an array
 					user = line.split(delimiter);
 					emails[i] = user[2];
+					id[i] = user[3];
 					i++;
 				}
 				int j = 0;
+				
+				if(unique == Integer.parseInt(id[j])) {
+					unique = gen();
+				}
+				
 				while (emails[j] != null) {
 					if (sEmail.getText().equals(emails[j])) {
 						flag = true;
@@ -155,7 +163,8 @@ public class OfficerController {
 				e3.printStackTrace();
 			}
 
-			int unique = gen();
+			
+			
 			// write to file
 			try {
 				officerRead = new BufferedWriter(new FileWriter("officers.csv", true));

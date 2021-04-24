@@ -20,22 +20,28 @@ import javafx.stage.Stage;
 public class CancelController {
 
 	@FXML
-	private Button back;
+	public Button back;
 
 	@FXML
-	private Button done;
+	public Button done;
 
 	@FXML
-	private Label correct;
+	public Label correct;
 
 	@FXML
-	private Label wrong;
+	public Label wrong;
 
 	@FXML
-	private TextField enterID;
+	public TextField enterID;
+	
+	public String endText = "Cancelled";
 
 	@FXML
-	void done(ActionEvent event) throws IOException {
+	public void done() throws Exception {
+		if(enterID.getText().contains(null))
+			throw new Exception("No ID entered");
+		
+		
 		String line = "";
 		String delimiter = ",";
 		String[] park = null;
@@ -105,13 +111,13 @@ public class CancelController {
 
 					}
 			}
-			System.out.println("Cancelled");
+			System.out.println(endText);
 			correct.setVisible(true);
 			wrong.setVisible(false);
 		} else {
-			System.out.println("Incorrect booking id");
 			correct.setVisible(false);
 			wrong.setVisible(true);
+			throw new Exception("Incorrect booking id");
 		}
 	}
 

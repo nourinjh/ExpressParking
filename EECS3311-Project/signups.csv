@@ -1,6 +1,5 @@
-testName,testName2,testEamil,password
-g,g,g,g
-a,a,a,a
-1,1,1,1
-qwe,qwe,qwwww,wewew
-hi,hi,hi,hi
+testName,testName2,testEamil@mail.com,password
+John,Smith,mail@mail.com,passw
+John,Smith,email@mail.com,passwo
+John,Smith,tmail@mail.com,passwor
+John,Hardy,ail@mail.com,passwordd

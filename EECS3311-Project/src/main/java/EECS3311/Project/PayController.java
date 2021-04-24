@@ -188,6 +188,7 @@ public class PayController {
 		}
 	}
 
+
 	@FXML
 	void credit(ActionEvent event) {
 		debitSet.setVisible(false);
