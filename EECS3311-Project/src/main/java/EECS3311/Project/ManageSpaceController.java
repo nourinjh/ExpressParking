@@ -50,21 +50,6 @@ public class ManageSpaceController {
 	private TextField enterID;
 
 	@FXML
-	private TableColumn<forTable, String> park;
-
-	@FXML
-	private TableColumn<forTable, String> book;
-
-	@FXML
-	private TableColumn<forTable, String> bookTime;
-
-	@FXML
-	private TableColumn<forTable, String> user;
-
-	@FXML
-	private TableView<forTable> table = new TableView<>();
-
-	@FXML
 	private ListView parkList = new ListView();
 	@FXML
 	private ListView idList = new ListView();
