@@ -3,8 +3,13 @@
  */
 package EECS3311.Project;
 
+/**
+ * @author Nourin Abd El Hadi
+ *
+ */
+
 public class Library {
-    public boolean someLibraryMethod() {
-        return true;
-    }
+	public boolean someLibraryMethod() {
+		return true;
+	}
 }

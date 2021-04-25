@@ -17,6 +17,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * @author Nourin Abd El Hadi
+ *
+ */
+
 public class CancelController {
 
 	@FXML

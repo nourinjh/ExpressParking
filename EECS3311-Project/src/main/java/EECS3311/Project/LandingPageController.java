@@ -11,6 +11,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+/**
+ * @author Nourin Abd El Hadi
+ *
+ */
+
 public class LandingPageController {
 
 	@FXML
@@ -60,7 +65,7 @@ public class LandingPageController {
 
 	@FXML
 	void viewBookings(ActionEvent event) throws IOException {
-		Parent parent = FXMLLoader.load(getClass().getResource("Booking.fxml"));
+		Parent parent = FXMLLoader.load(getClass().getResource("ViewBooking.fxml"));
 		Scene scene = new Scene(parent);
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		stage.hide();

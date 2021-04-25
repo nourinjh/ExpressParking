@@ -16,6 +16,11 @@ import javafx.stage.Stage;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+/**
+ * @author Nourin Abd El Hadi
+ *
+ */
+
 public class UserLoginController {
 
 	@FXML

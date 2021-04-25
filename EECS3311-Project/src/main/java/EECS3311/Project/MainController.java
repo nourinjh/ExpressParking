@@ -9,6 +9,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 
+/**
+ * @author Nourin Abd El Hadi
+ *
+ */
+
 public class MainController {
 	@FXML
 	private Button userLogin;

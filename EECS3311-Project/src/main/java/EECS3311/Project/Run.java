@@ -6,16 +6,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
+/**
+ * @author Nourin Abd El Hadi
+ *
+ */
 
 public class Run extends Application {
-	
+
 	public static String email;
-	
+
 	public static String fName;
-	
+
 	public static String lName;
-	
+
 	public static Stage primaryStage;
 
 	@Override

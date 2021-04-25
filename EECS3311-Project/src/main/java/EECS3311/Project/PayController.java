@@ -20,92 +20,96 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+/**
+ * @author Nourin Abd El Hadi
+ *
+ */
+
 public class PayController {
 
 	@FXML
-    private Label bookedWarn;
+	private Label bookedWarn;
 
-    @FXML
-    private Label nullWarn;
-    
-    @FXML
-    private Label error;
+	@FXML
+	private Label nullWarn;
 
-    @FXML
-    private Button back3;
+	@FXML
+	private Label error;
 
-    @FXML
-    private Label con;
+	@FXML
+	private Button back3;
 
-    @FXML
-    private AnchorPane buttonsSet;
+	@FXML
+	private Label con;
 
-    @FXML
-    private Label payLabel;
+	@FXML
+	private AnchorPane buttonsSet;
 
-    @FXML
-    private Button paypal;
+	@FXML
+	private Label payLabel;
 
-    @FXML
-    private Button credit;
+	@FXML
+	private Button paypal;
 
-    @FXML
-    private Button debit;
+	@FXML
+	private Button credit;
 
-    @FXML
-    private AnchorPane debitSet;
+	@FXML
+	private Button debit;
 
-    @FXML
-    private TextField cvvD;
+	@FXML
+	private AnchorPane debitSet;
 
-    @FXML
-    private TextField nameD;
+	@FXML
+	private TextField cvvD;
 
-    @FXML
-    private TextField debNum;
+	@FXML
+	private TextField nameD;
 
-    @FXML
-    private DatePicker expD;
+	@FXML
+	private TextField debNum;
 
-    @FXML
-    private AnchorPane paypalSet;
+	@FXML
+	private DatePicker expD;
 
-    @FXML
-    private TextField paymail;
+	@FXML
+	private AnchorPane paypalSet;
 
-    @FXML
-    private PasswordField pass;
+	@FXML
+	private TextField paymail;
 
-    @FXML
-    private AnchorPane creditSet;
+	@FXML
+	private PasswordField pass;
 
-    @FXML
-    private TextField cvv;
+	@FXML
+	private AnchorPane creditSet;
 
-    @FXML
-    private TextField name;
+	@FXML
+	private TextField cvv;
 
-    @FXML
-    private TextField credNum;
+	@FXML
+	private TextField name;
 
-    @FXML
-    private DatePicker exp;
+	@FXML
+	private TextField credNum;
 
-    @FXML
-    private AnchorPane mainSet;
+	@FXML
+	private DatePicker exp;
 
-    @FXML
-    private TextField num3;
+	@FXML
+	private AnchorPane mainSet;
 
-    @FXML
-    private TextField num2;
+	@FXML
+	private TextField num3;
 
-    @FXML
-    private TextField num1;
+	@FXML
+	private TextField num2;
 
-    @FXML
-    private Button done;
+	@FXML
+	private TextField num1;
 
+	@FXML
+	private Button done;
 
 	@FXML
 	void done(ActionEvent event) throws IOException {
@@ -146,7 +150,7 @@ public class PayController {
 					allPark[k] = parkingSpace[j];
 
 				}
-				System.out.println(num1.getText() + " " + allPark[k]);
+
 				if (num1.getText().contentEquals(allPark[k])) {
 					flag = true;
 					bookPrice = Math.round((bookPrice + bookTime[j] * 0.05) * 100.0) / 100.0;
@@ -188,16 +192,14 @@ public class PayController {
 		}
 	}
 
-
 	@FXML
 	void credit(ActionEvent event) {
 		debitSet.setVisible(false);
 		creditSet.setVisible(true);
 		paypalSet.setVisible(false);
 
-
 	}
-	
+
 	@FXML
 	void creditDone(ActionEvent event) {
 		BufferedWriter payConfirm = null;
@@ -220,7 +222,7 @@ public class PayController {
 		}
 		if (credNum.getText() == "" || name.getText() == "" || cvv.getText() == "" || exp.getValue() == null) {
 			error.setVisible(true);
-		}else {
+		} else {
 			error.setVisible(false);
 			nullWarn.setVisible(false);
 			bookedWarn.setVisible(false);
@@ -236,9 +238,8 @@ public class PayController {
 		paypalSet.setVisible(false);
 		error.setVisible(false);
 
-
 	}
-	
+
 	@FXML
 	void debitDone(ActionEvent event) {
 		BufferedWriter payConfirm = null;
@@ -264,7 +265,7 @@ public class PayController {
 		if (debNum.getText() == "" || nameD.getText() == "" || cvvD.getText() == "" || expD.getValue() == null) {
 			error.setVisible(true);
 
-		}else {
+		} else {
 			nullWarn.setVisible(false);
 			bookedWarn.setVisible(false);
 			con.setVisible(true);
@@ -278,11 +279,11 @@ public class PayController {
 		debitSet.setVisible(false);
 		creditSet.setVisible(false);
 		error.setVisible(false);
-		
+
 	}
-	
-    @FXML
-    void paypalDone(ActionEvent event) {
+
+	@FXML
+	void paypalDone(ActionEvent event) {
 		BufferedWriter payConfirm = null;
 		try {
 			payConfirm = new BufferedWriter(new FileWriter("payConfirm.csv", true));
@@ -303,14 +304,14 @@ public class PayController {
 
 		if (paymail.getText() == "" || pass.getText() == "") {
 			error.setVisible(true);
-		}else {
+		} else {
 			nullWarn.setVisible(false);
 			bookedWarn.setVisible(false);
 			con.setVisible(true);
 			error.setVisible(false);
 		}
-		
-    }
+
+	}
 
 	// back button
 	@FXML

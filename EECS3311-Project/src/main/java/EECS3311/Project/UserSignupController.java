@@ -18,6 +18,11 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 
+/**
+ * @author Nourin Abd El Hadi
+ *
+ */
+
 public class UserSignupController {
 	@FXML
 	private Button signup;

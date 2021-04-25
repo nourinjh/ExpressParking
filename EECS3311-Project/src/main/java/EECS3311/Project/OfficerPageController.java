@@ -11,6 +11,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+/**
+ * @author Nourin Abd El Hadi
+ *
+ */
+
 public class OfficerPageController {
 
 	@FXML

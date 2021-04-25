@@ -18,6 +18,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * @author Nourin Abd El Hadi
+ *
+ */
+
 public class BookSpaceController {
 
 	@FXML
@@ -40,17 +45,17 @@ public class BookSpaceController {
 
 	@FXML
 	public Label nullWarn;
-	
+
 	@FXML
 	public Label tooMany;
-	
+
 	@FXML
 	public Label booked;
-	
+
 	public int count = 0;
-	
+
 	public int bookID = gen();
-	
+
 	@FXML
 	public void back3(ActionEvent event) throws IOException {
 		Parent parent = FXMLLoader.load(getClass().getResource("LandingPage.fxml"));
@@ -67,7 +72,6 @@ public class BookSpaceController {
 		String line = "";
 		String delimiter = ",";
 		String[] park = null;
-		
 
 		// read file
 		BufferedReader read = new BufferedReader(new FileReader("parkingSpaces.csv"));
@@ -116,8 +120,8 @@ public class BookSpaceController {
 		} else {
 			// write to file
 			BufferedWriter parkingSpaces = null;
-			
-			try {				
+
+			try {
 				parkingSpaces = new BufferedWriter(new FileWriter("parkingSpaces.csv", true));
 				parkingSpaces.write(spaceNum.getText() + "," + Run.email + "," + bookingTime.getText() + "," + bookID);
 				parkingSpaces.newLine();
@@ -133,7 +137,7 @@ public class BookSpaceController {
 
 					}
 			}
-			
+
 			booked.setText("Booked! Your Booking ID is: " + bookID);
 			booked.setVisible(true);
 			tooMany.setVisible(false);

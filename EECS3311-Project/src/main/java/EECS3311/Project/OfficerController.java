@@ -19,6 +19,11 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * @author Nourin Abd El Hadi
+ *
+ */
+
 public class OfficerController {
 
 	@FXML
@@ -145,11 +150,11 @@ public class OfficerController {
 					i++;
 				}
 				int j = 0;
-				
-				if(unique == Integer.parseInt(id[j])) {
+
+				if (unique == Integer.parseInt(id[j])) {
 					unique = gen();
 				}
-				
+
 				while (emails[j] != null) {
 					if (sEmail.getText().equals(emails[j])) {
 						flag = true;
@@ -163,8 +168,6 @@ public class OfficerController {
 				e3.printStackTrace();
 			}
 
-			
-			
 			// write to file
 			try {
 				officerRead = new BufferedWriter(new FileWriter("officers.csv", true));
